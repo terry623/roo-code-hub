@@ -51,7 +51,7 @@ export default function InstallationGuide({ type }: InstallationGuideProps) {
               </div>
               <p className="text-sm text-gray-700">
                 {isModes
-                  ? "點擊左下角 Modes 選單，然後按下設定圖示"
+                  ? "點擊左下角的 Modes 選單，然後按下設定圖示"
                   : "將檔案放置到專案工作區的 .roo/commands 資料夾中"}
               </p>
             </div>
