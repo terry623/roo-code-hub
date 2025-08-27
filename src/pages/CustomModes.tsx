@@ -14,7 +14,7 @@ export default function CustomModes() {
             <p className="text-gray-600">
               探索將 Roo Code 轉化為專業助手的自訂 AI 模式。
             </p>
-            <p className="text-sm text-blue-600 mt-2">
+            <p className="text-sm mt-2">
               <a
                 href="https://docs.roocode.com/features/custom-modes"
                 target="_blank"
@@ -33,7 +33,7 @@ export default function CustomModes() {
                 className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg hover:border-blue-300 transition-all"
               >
                 <div className="mb-4">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-lg font-mono font-semibold text-blue-600 bg-blue-50 px-3 py-1.5 rounded-md mb-2 inline-block">
                     {mode.name}
                   </h3>
                 </div>
@@ -41,7 +41,7 @@ export default function CustomModes() {
                   {mode.description}
                 </p>
                 <div className="flex justify-end">
-                  <button 
+                  <button
                     onClick={() => downloadFile(mode.filename, "custom-modes")}
                     className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors cursor-pointer"
                   >

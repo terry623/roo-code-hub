@@ -1,5 +1,6 @@
 export const WIKI_URL =
   "https://wiki.mediatek.inc/spaces/GAIA/pages/2297894099/01.+AI+Coding+Assistant+Tools+Hub";
+
 export const SURVEY_URL = "https://surveycake.com/example";
 
 export const SLASH_COMMANDS = [
@@ -37,23 +38,9 @@ export const SLASH_COMMANDS = [
 
 export const CUSTOM_MODES = [
   {
-    name: "Code Reviewer",
-    description: "專業的程式碼審查助手，提供詳細的程式碼品質回饋、最佳實踐建議和改進方案。",
-    filename: "code-reviewer.md",
-  },
-  {
-    name: "Technical Writer",
-    description: "專門用於創建清晰、全面的技術文件和 API 指南的專業模式。",
-    filename: "technical-writer.md",
-  },
-  {
-    name: "System Architect",
-    description: "協助設計可擴展的系統架構，並提供技術選型的專業見解。",
-    filename: "system-architect.md",
-  },
-  {
-    name: "Debug Assistant",
-    description: "專門協助識別和解決各種程式語言中的錯誤和問題。",
-    filename: "debug-assistant.md",
+    name: "Code",
+    description:
+      "專業的程式碼審查助手，提供詳細的程式碼品質回饋、最佳實踐建議和改進方案。",
+    filename: "code.yaml",
   },
 ];

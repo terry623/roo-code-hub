@@ -14,7 +14,7 @@ export default function SlashCommands() {
             <p className="text-gray-600">
               探索將 Roo Code 轉化為開發利器的強大指令。
             </p>
-            <p className="text-sm text-blue-600 mt-2">
+            <p className="text-sm mt-2">
               <a
                 href="https://docs.roocode.com/features/slash-commands"
                 target="_blank"
@@ -42,7 +42,9 @@ export default function SlashCommands() {
                 </p>
                 <div className="flex justify-end">
                   <button
-                    onClick={() => downloadFile(command.filename, "slash-commands")}
+                    onClick={() =>
+                      downloadFile(command.filename, "slash-commands")
+                    }
                     className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors cursor-pointer"
                   >
                     下載
