@@ -4,6 +4,9 @@ interface InstallationGuideProps {
 
 export default function InstallationGuide({ type }: InstallationGuideProps) {
   const isModes = type === 'modes'
+  const documentationUrl = isModes 
+    ? 'https://docs.roocode.com/features/custom-modes'
+    : 'https://docs.roocode.com/features/slash-commands'
   
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 h-fit sticky top-6">
@@ -27,8 +30,8 @@ export default function InstallationGuide({ type }: InstallationGuideProps) {
               </div>
               <p className="text-sm text-gray-700">
                 {isModes ? 
-                  'Open Claude Code and navigate to Settings → Custom Modes' :
-                  'Open Claude Code and navigate to Settings → Slash Commands'
+                  'Open Roo Code and navigate to Settings → Custom Modes' :
+                  'Open Roo Code and navigate to Settings → Slash Commands'
                 }
               </p>
             </div>
@@ -59,7 +62,7 @@ export default function InstallationGuide({ type }: InstallationGuideProps) {
         <div className="border-t pt-4">
           <h4 className="font-semibold text-gray-800 mb-2">Need help?</h4>
           <p className="text-sm text-gray-600">
-            Check out the <a href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">documentation</a> for detailed instructions.
+            Check out the <a href={documentationUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">documentation</a> for detailed instructions.
           </p>
         </div>
       </div>

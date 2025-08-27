@@ -1,73 +1,71 @@
-import { Link, useLocation } from 'react-router-dom'
-
-const WIKI_URL = 'https://github.com/anthropics/claude-code'
-const SURVEY_URL = 'https://surveycake.com/example'
+import { Link, useLocation } from "react-router-dom";
+import { WIKI_URL, SURVEY_URL } from "../constants";
 
 interface LayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps) {
-  const location = useLocation()
-  
+  const location = useLocation();
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      <nav className="bg-white shadow-sm border-b">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-sky-50 to-emerald-50 flex flex-col">
+      <nav className="bg-white/90 backdrop-blur-md shadow-lg border-b border-white/20">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-8">
-              <Link 
-                to="/" 
-                className="text-2xl font-bold text-gray-900 hover:text-indigo-600 transition-colors"
+              <Link
+                to="/"
+                className="text-2xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent hover:from-blue-600 hover:to-cyan-600 transition-all duration-300"
               >
                 Roo Code Hub
               </Link>
-              
+
               <div className="flex space-x-6">
-                <Link 
-                  to="/modes" 
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    location.pathname === '/modes' 
-                      ? 'bg-indigo-100 text-indigo-700' 
-                      : 'text-gray-600 hover:text-gray-900'
+                <Link
+                  to="/modes"
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    location.pathname === "/modes"
+                      ? "bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 shadow-sm"
+                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/50"
                   }`}
                 >
                   Custom Modes
                 </Link>
-                <Link 
-                  to="/commands" 
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    location.pathname === '/commands' 
-                      ? 'bg-indigo-100 text-indigo-700' 
-                      : 'text-gray-600 hover:text-gray-900'
+                <Link
+                  to="/commands"
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    location.pathname === "/commands"
+                      ? "bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-700 shadow-sm"
+                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/50"
                   }`}
                 >
                   Slash Commands
                 </Link>
-                <a 
+                <a
                   href={WIKI_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+                  className="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/50 transition-all duration-200"
                 >
-                  Wiki
+                  Wiki 文件
                 </a>
               </div>
             </div>
-            
-            <a 
+
+            <a
               href={SURVEY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors"
+              className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
-              Submit
+              投稿
             </a>
           </div>
         </div>
       </nav>
-      
+
       {children}
     </div>
-  )
+  );
 }
