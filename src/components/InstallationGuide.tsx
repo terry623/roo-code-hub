@@ -77,7 +77,7 @@ export default function InstallationGuide({ type }: InstallationGuideProps) {
               href={documentationUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="underline"
             >
               說明文件
             </a>{" "}

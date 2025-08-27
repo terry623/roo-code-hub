@@ -15,13 +15,14 @@ export default function CustomModes() {
               探索將 Roo Code 轉化為專業助手的自訂 AI 模式。
             </p>
             <p className="text-sm mt-2">
+              查看{" "}
               <a
                 href="https://docs.roocode.com/features/custom-modes"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="underline"
               >
-                查看官方文件 →
+                官方文件 →
               </a>
             </p>
           </div>

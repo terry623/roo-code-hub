@@ -15,13 +15,14 @@ export default function SlashCommands() {
               探索將 Roo Code 轉化為開發利器的強大指令。
             </p>
             <p className="text-sm mt-2">
+              查看{" "}
               <a
                 href="https://docs.roocode.com/features/slash-commands"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="underline"
               >
-                查看官方文件 →
+                官方文件 →
               </a>
             </p>
           </div>
