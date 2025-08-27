@@ -39,29 +39,41 @@ export default function SlashCommands() {
       <div className="flex gap-8">
         <div className="flex-1">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Slash Commands</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              Slash Commands
+            </h1>
             <p className="text-gray-600">
-              強大的指令，擴展 Roo Code 的功能以快速完成開發任務。
+              探索將 Roo Code 轉化為開發利器的強大指令。
+            </p>
+            <p className="text-sm text-blue-600 mt-2">
+              <a
+                href="https://docs.roocode.com/features/slash-commands"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                查看官方文件 →
+              </a>
             </p>
           </div>
 
-          <div className="grid gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {sampleCommands.map((command) => (
               <div
                 key={command.id}
-                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+                className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg hover:border-blue-300 transition-all"
               >
-                <div className="flex justify-between items-start mb-4">
-                  <div className="flex-1">
-                    <div className="flex items-center mb-2">
-                      <code className="text-lg font-mono font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">
-                        {command.name}
-                      </code>
-                    </div>
-                    <p className="text-gray-600 mb-3">{command.description}</p>
-                  </div>
-                  <button className="bg-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-indigo-700 transition-colors ml-4">
-                    安裝
+                <div className="mb-4">
+                  <code className="text-lg font-mono font-semibold text-blue-600 bg-blue-50 px-3 py-1.5 rounded-md">
+                    {command.name}
+                  </code>
+                </div>
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  {command.description}
+                </p>
+                <div className="flex justify-end">
+                  <button className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors cursor-pointer">
+                    下載
                   </button>
                 </div>
               </div>
