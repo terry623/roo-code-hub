@@ -2,6 +2,8 @@ export const WIKI_URL = "";
 
 export const SURVEY_URL = "";
 
+export const COMPANY_NAME = "";
+
 export const SLASH_COMMANDS = [
   {
     name: "/test-gen",

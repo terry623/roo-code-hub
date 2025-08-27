@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import { COMPANY_NAME } from "../constants";
+
 export default function Home() {
   return (
     <div className="flex-1 flex items-center justify-center">
@@ -8,8 +10,9 @@ export default function Home() {
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
             Roo Code Hub
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            分享 Roo Code 自訂模式和斜線指令的平台，讓開發者能夠輕鬆分享和使用。
+          <p className="text-xl text-gray-600 max-w-xl mx-auto">
+            分享 Roo Code 自訂模式和斜線指令的平台，讓 {COMPANY_NAME}{" "}
+            的開發者都能夠輕鬆分享和使用。
           </p>
         </div>
 
