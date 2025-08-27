@@ -7,7 +7,12 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview --host",
+    "pm2:start": "pm2 start npm --name \"roo-code-hub\" -- run preview",
+    "pm2:stop": "pm2 stop roo-code-hub",
+    "pm2:restart": "pm2 restart roo-code-hub",
+    "pm2:delete": "pm2 delete roo-code-hub",
+    "pm2:logs": "pm2 logs roo-code-hub"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
