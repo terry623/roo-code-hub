@@ -1,28 +1,6 @@
 import InstallationGuide from "../components/InstallationGuide";
-
-const sampleModes = [
-  {
-    id: 1,
-    name: "Code Reviewer",
-    description:
-      "專業的程式碼審查助手，提供詳細的程式碼品質回饋、最佳實踐建議和改進方案。",
-  },
-  {
-    id: 2,
-    name: "Technical Writer",
-    description: "專門用於創建清晰、全面的技術文件和 API 指南的專業模式。",
-  },
-  {
-    id: 3,
-    name: "System Architect",
-    description: "協助設計可擴展的系統架構，並提供技術選型的專業見解。",
-  },
-  {
-    id: 4,
-    name: "Debug Assistant",
-    description: "專門協助識別和解決各種程式語言中的錯誤和問題。",
-  },
-];
+import { CUSTOM_MODES } from "../constants";
+import { downloadFile } from "../utils/download";
 
 export default function CustomModes() {
   return (
@@ -49,9 +27,9 @@ export default function CustomModes() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {sampleModes.map((mode) => (
+            {CUSTOM_MODES.map((mode, index) => (
               <div
-                key={mode.id}
+                key={index}
                 className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg hover:border-blue-300 transition-all"
               >
                 <div className="mb-4">
@@ -63,7 +41,10 @@ export default function CustomModes() {
                   {mode.description}
                 </p>
                 <div className="flex justify-end">
-                  <button className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors cursor-pointer">
+                  <button 
+                    onClick={() => downloadFile(mode.filename, "custom-modes")}
+                    className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors cursor-pointer"
+                  >
                     下載
                   </button>
                 </div>

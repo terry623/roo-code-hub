@@ -1,37 +1,6 @@
 import InstallationGuide from "../components/InstallationGuide";
-
-const sampleCommands = [
-  {
-    id: 1,
-    name: "/test-gen",
-    description: "自動為您的程式碼函數和類別生成全面的測試案例。",
-  },
-  {
-    id: 2,
-    name: "/doc-gen",
-    description: "根據程式碼分析，為函數、類別和模組創建詳細文件。",
-  },
-  {
-    id: 3,
-    name: "/refactor",
-    description: "建議並應用程式碼重構改進，提升程式碼可維護性。",
-  },
-  {
-    id: 4,
-    name: "/security-scan",
-    description: "對您的程式碼進行安全分析，識別潛在的安全漏洞。",
-  },
-  {
-    id: 5,
-    name: "/api-gen",
-    description: "根據您的資料模型生成 REST API 端點和 OpenAPI 文件。",
-  },
-  {
-    id: 6,
-    name: "/commit-msg",
-    description: "根據您的暫存變更生成有意義的提交訊息。",
-  },
-];
+import { SLASH_COMMANDS } from "../constants";
+import { downloadFile } from "../utils/download";
 
 export default function SlashCommands() {
   return (
@@ -58,9 +27,9 @@ export default function SlashCommands() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {sampleCommands.map((command) => (
+            {SLASH_COMMANDS.map((command, index) => (
               <div
-                key={command.id}
+                key={index}
                 className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg hover:border-blue-300 transition-all"
               >
                 <div className="mb-4">
@@ -72,7 +41,10 @@ export default function SlashCommands() {
                   {command.description}
                 </p>
                 <div className="flex justify-end">
-                  <button className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors cursor-pointer">
+                  <button
+                    onClick={() => downloadFile(command.filename, "slash-commands")}
+                    className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors cursor-pointer"
+                  >
                     下載
                   </button>
                 </div>
